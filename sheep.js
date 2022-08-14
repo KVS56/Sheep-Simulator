@@ -140,7 +140,7 @@ function moveSheep() {
   sheep.forEach(s => s.move());
 }
 function drawBaaBaaSheep() {
-  c.fillStyle = 'rgba(0, 0, 0,0,0,0,0,0,0,0,0, 0.1)';
+  c.fillStyle = 'rgba(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.1)';
   c.beginPath();
   sheep.forEach(s => s.drawShadow(c));
   c.fill();
