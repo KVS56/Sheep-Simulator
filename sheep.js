@@ -1,6 +1,6 @@
 const sheep = [];
 
-const SHEEP_SIZE = 5;
+const SHEEP_SIZE = 1;
 
 class Sheep {
 
@@ -15,7 +15,7 @@ class Sheep {
     this.noCheck = false;
     this.leader = null;
     this.destination = null;
-    this.members = 0;
+    this.members = 1;
     this.ignoreMe = false;
     this.floating = false;
     this.sheep = true;
