@@ -1,3 +1,3 @@
-# Ovinetopia
+# Sheep Simulator(Fork of Sheeptester's Ovinetopia
 
-A sheep-based incremental game.
+A simulator of sheep
