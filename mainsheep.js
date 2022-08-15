@@ -1,13 +1,13 @@
 // URL PARAMETERS
 // quality       - canvas quality
-const params = {};
+const newparams = {};
 if (window.location.search) {
   window.location.search.slice(1).split('&').forEach(entry => {
     const equalSignLoc = entry.indexOf('=');
     if (~equalSignLoc) {
-      params[entry.slice(0, equalSignLoc)] = entry.slice(equalSignLoc + 1);
+      newparams[entry.slice(0, equalSignLoc)] = entry.slice(equalSignLoc + 1);
     } else {
-      params[entry] = true;
+      newparams[entry] = true;
     }
   });
 }
