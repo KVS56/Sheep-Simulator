@@ -1,6 +1,6 @@
 const sheep = [];
 
-const SHEEP_SIZE = 1;
+const SHEEP_SIZE = 3;
 
 class Sheep {
 

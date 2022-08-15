@@ -1,6 +1,6 @@
 const blacksheep = [];
 
-const BLACKSHEEP_SIZE = 1;
+const BLACKSHEEP_SIZE = 3;
 
 class Blacksheep {
 
