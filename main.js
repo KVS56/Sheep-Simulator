@@ -1,3 +1,5 @@
+/* global harvestedWool */
+
 // URL PARAMETERS
 // quality       - canvas quality
 const params = {};
@@ -27,12 +29,12 @@ function paint(actuallyPaint) {
 }
 function tick() {
   new Sheep(0, 0, sheep.length);
-  if (elems.freeSheep.classList.contains('hidden'))
-    elems.freeSheep.classList.remove('hidden');
+  if (elems.shearSheep.classList.contains('hidden'))
+    elems.shearSheep.classList.remove('hidden');
   const actualSheep = sheep.filter(s => s.sheep && !s.floating);
   document.title = actualSheep.length + ' sheep - Ovinetopia';
   elems.sheepCount.textContent = actualSheep.length + ' sheep';
-  elems.freeSheep.disabled = !actualSheep.length;
+  elems.shearSheep.disabled = !actualSheep.length;
 }
 setInterval(tick, 1000);
 
@@ -40,14 +42,15 @@ const elems = {};
 function initElems() {
   elems.canvas = document.getElementById('sheep');
   elems.sheepCount = document.getElementById('sheep-count');
-  elems.freeSheep = document.getElementById('free-sheep');
-  elems.freedSheepCount = document.getElementById('freed-sheep');
+  elems.shearSheep = document.getElementById('free-sheep');
+  elems.harvestedWoolCount = document.getElementById('freed-sheep');
 
-  elems.freeSheep.addEventListener('click', e => {
+  elems.shearSheep.addEventListener('click', e => {
     const actualSheep = sheep.filter(s => s.sheep && !s.floating);
     actualSheep.forEach(s => s.free());
-    freedSheep += actualSheep.length;
-    elems.freedSheepCount.textContent = `${freedSheep} sheep freed.`;
+    harvestedwool += actualSheep.length;
+    elems.harvestedWoolCount.textContent = `${harvestedWool} sheep-worths of
+    wool harvested.`;
     document.title = '0 sheep - Ovinetopia';
     elems.sheepCount.textContent = '0 sheep';
   });
