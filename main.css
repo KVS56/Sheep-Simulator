@@ -29,7 +29,6 @@ body {
 }
 .btn {
   vertical-align: middle;
-  -webkit-appearance: none;
   border: 1px solid white;
   background: none;
   border-radius: 5px;
@@ -59,7 +58,7 @@ body {
 }
 :disabled {
   opacity: 0.5;
-  cursor: default !important; /* reee */
+  cursor: default !important; 
 }
 .hidden {
   display: none;
@@ -81,7 +80,7 @@ body {
 #sheep-count {
   font-size: 50px;
 }
-#freed-sheep {
+#harvested-wool {
   font-size: 16px;
 }
 .bottom-right {
@@ -101,7 +100,6 @@ body {
   padding: 0;
   border: none;
   background: none;
-  -webkit-appearance: none;
   font: inherit;
   font-size: 16px;
   cursor: pointer;

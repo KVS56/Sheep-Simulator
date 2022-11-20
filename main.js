@@ -1,5 +1,3 @@
-/* global harvestedWool */
-
 // URL PARAMETERS
 // quality       - canvas quality
 const params = {};
@@ -34,24 +32,23 @@ function tick() {
   const actualSheep = sheep.filter(s => s.sheep && !s.floating);
   document.title = actualSheep.length + ' sheep - Ovinetopia';
   elems.sheepCount.textContent = actualSheep.length + ' sheep';
-  elems.shearSheep.disabled = !actualSheep.length;
+  elems.freeSheep.disabled = !actualSheep.length;
 }
 setInterval(tick, 1000);
 
 const elems = {};
 function initElems() {
   elems.canvas = document.getElementById('sheep');
-  elems.sheepCount = document.getElementById('sheep-count');
-  elems.shearSheep = document.getElementById('free-sheep');
-  elems.harvestedWoolCount = document.getElementById('freed-sheep');
+  elems.animalCount = document.getElementById('animal-count');
+  elems.harvestedWool = document.getElementById('shear-sheep');
+  elems.harvestedWoolCount = document.getElementById('harvested-wool');
 
-  elems.shearSheep.addEventListener('click', e => {
+  elems.freeSheep.addEventListener('click', e => {
     const actualSheep = sheep.filter(s => s.sheep && !s.floating);
     actualSheep.forEach(s => s.free());
-    harvestedwool += actualSheep.length;
-    elems.harvestedWoolCount.textContent = `${harvestedWool} sheep-worths of
-    wool harvested.`;
-    document.title = '0 sheep - Ovinetopia';
+    freedSheep += actualSheep.length;
+    elems.freedSheepCount.textContent = `${freedSheep} sheep sheared.`;
+    document.title = '0 animals - Ovinetopia';
     elems.sheepCount.textContent = '0 sheep';
   });
 }
