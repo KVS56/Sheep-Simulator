@@ -14,7 +14,7 @@ if (window.location.search) {
 
 const FULL_CIRCLE = 2 * Math.PI;
 
-let freedSheep = 0;
+let harvestedWool = 0;
 let frame = 0;
 function paint(actuallyPaint) {
   frame++;
@@ -39,15 +39,15 @@ setInterval(tick, 1000);
 const elems = {};
 function initElems() {
   elems.canvas = document.getElementById('sheep');
-  elems.animalCount = document.getElementById('animal-count');
+  elems.sheepCount = document.getElementById('sheep-count');
   elems.harvestedWool = document.getElementById('shear-sheep');
   elems.harvestedWoolCount = document.getElementById('harvested-wool');
 
-  elems.freeSheep.addEventListener('click', e => {
+  elems.shearSheep.addEventListener('click', e => {
     const actualSheep = sheep.filter(s => s.sheep && !s.floating);
     actualSheep.forEach(s => s.free());
-    freedSheep += actualSheep.length;
-    elems.freedSheepCount.textContent = `${freedSheep} sheep sheared.`;
+    harvestedWool += actualSheep.length;
+    elems.harvestedWoolCount.textContent = `${harvestedWool} sheep-worths of wool sheared.`;
     document.title = '0 animals - Ovinetopia';
     elems.sheepCount.textContent = '0 sheep';
   });
