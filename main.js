@@ -48,7 +48,7 @@ function initElems() {
     actualSheep.forEach(s => s.free());
     harvestedWool += actualSheep.length;
     elems.harvestedWoolCount.textContent = `${harvestedWool} sheep-worths of wool sheared.`;
-    document.title = '0 animals - Ovinetopia';
+    document.title = '0 sheep - Ovinetopia';
     elems.sheepCount.textContent = '0 sheep';
   });
 }
